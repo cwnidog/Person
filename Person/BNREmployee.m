@@ -28,7 +28,8 @@
 
 - (float)bodyMassIndex
 {
-  return 19.0;
+  float normalBMI = [super bodyMassIndex];
+  return normalBMI * 0.9;
 } // bodyMassIndex
 
 @end
