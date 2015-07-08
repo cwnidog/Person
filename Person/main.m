@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BNRPerson.h"
+#import "BNREmployee.h"
 
 int main(int argc, const char *argv[])
 {
   @autoreleasepool
   {
-    // create a BNRPerson instance
-    BNRPerson *mikey = [[BNRPerson alloc] init];
+    // create a BNREmployee instance
+    BNRPerson *mikey = [[BNREmployee alloc] init];
     
     // set the instance attribute values
     mikey.weightInKilos = 96;
