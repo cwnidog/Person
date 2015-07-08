@@ -17,12 +17,12 @@ int main(int argc, const char *argv[])
     BNRPerson *mikey = [[BNRPerson alloc] init];
     
     // set the instance attribute values
-    [mikey setWeightInKilos:96];
-    [mikey setHeightInMeters:1.8];
+    mikey.weightInKilos = 96;
+    mikey.heightInMeters = 1.8;
    // @autoreleasepool
   
-  float height = [mikey heightInMeters];
-  int weight = [mikey weightInKilos];
+  float height = mikey.heightInMeters;
+  int weight = mikey.weightInKilos;
   NSLog(@"mikey is %.2f meters tall and weight %d kilograms", height, weight);
   
   float bmi = [mikey bodyMassIndex];
