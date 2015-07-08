@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D8C57131B4DE64000EF47CF /* BNREmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8C57121B4DE64000EF47CF /* BNREmployee.m */; };
 		5DCD4AFB1B4C85EB005958C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD4AFA1B4C85EB005958C8 /* main.m */; };
 		5DCD4B031B4C8650005958C8 /* BNRPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD4B021B4C8650005958C8 /* BNRPerson.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D8C57111B4DE64000EF47CF /* BNREmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNREmployee.h; sourceTree = "<group>"; };
+		5D8C57121B4DE64000EF47CF /* BNREmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNREmployee.m; sourceTree = "<group>"; };
 		5DCD4AF71B4C85EB005958C8 /* Person */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Person; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCD4AFA1B4C85EB005958C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5DCD4B011B4C8650005958C8 /* BNRPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRPerson.h; sourceTree = "<group>"; };
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				5DCD4AFA1B4C85EB005958C8 /* main.m */,
+				5D8C57111B4DE64000EF47CF /* BNREmployee.h */,
+				5D8C57121B4DE64000EF47CF /* BNREmployee.m */,
 				5DCD4B011B4C8650005958C8 /* BNRPerson.h */,
 				5DCD4B021B4C8650005958C8 /* BNRPerson.m */,
 			);
@@ -123,6 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D8C57131B4DE64000EF47CF /* BNREmployee.m in Sources */,
 				5DCD4AFB1B4C85EB005958C8 /* main.m in Sources */,
 				5DCD4B031B4C8650005958C8 /* BNRPerson.m in Sources */,
 			);
@@ -241,6 +247,7 @@
 				5DCD4B001B4C85EB005958C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
