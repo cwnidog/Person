@@ -13,7 +13,7 @@
 // override normal description method
 - (NSString *) desription
 {
-  return [NSString stringWithFormat:@"<Employee %d", self.employeeID];
+  return [NSString stringWithFormat:@"<Employee %d>", self.employeeID];
 }
 
 - (double)yearsOfEmployment
