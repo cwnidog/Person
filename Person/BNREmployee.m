@@ -10,13 +10,18 @@
 
 @implementation BNREmployee
 
+// override normal description method
+- (NSString *) desription
+{
+  return [NSString stringWithFormat:@"<Employee %d", self.employeeID];
+}
+
 - (double)yearsOfEmployment
 {
   if (self.hireDate)
   {
     //NSTInterval is the same as double
-    NSDate *now = [NSDate date];
-    NSTimeInterval secs = [now timeIntervalSinceDate:now];
+    NSTimeInterval secs = [self.hireDate timeIntervalSinceNow] * -1; // interval to date in th epast is negative, normalize
     return secs / 31557600.0; // seconds per year
   }
   
