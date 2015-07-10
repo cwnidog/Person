@@ -7,14 +7,44 @@
 //
 
 #import "BNREmployee.h"
+#import "BNRAsset.h"
 
 @implementation BNREmployee
 
-// override normal description method
-- (NSString *) desription
+// accessors for asset properties
+- (void)setAssets:(NSArray *)a
 {
-  return [NSString stringWithFormat:@"<Employee %d>", self.employeeID];
-}
+  _assets = [a mutableCopy];
+} // setAssets()
+
+- (NSArray *)assets
+{
+  return [_assets copy];
+} // assets get accessor
+
+- (void)addAsset:(BNRAsset *)a
+{
+  // Is the list of assets nil?
+  if (!_assets)
+  {
+    // create the array
+    _assets = [[NSMutableArray alloc] init];
+  }
+  
+  [_assets addObject:a];
+
+} // addAsset()
+
+- (unsigned int)valueOfAssets
+{
+  // sum up the resal evalue of the assets
+  unsigned int sum = 0;
+  for (BNRAsset *a in _assets)
+  {
+    sum += [a resalevalue];
+  }
+  return sum;
+} // valueOfAssets
 
 - (double)yearsOfEmployment
 {
@@ -36,5 +66,16 @@
   float normalBMI = [super bodyMassIndex];
   return normalBMI * 0.9;
 } // bodyMassIndex
+
+// override normal description method
+- (NSString *)description
+{
+  return [NSString stringWithFormat:@"<Employee %u: $%u in assets>", self.employeeID, self.valueOfAssets];
+}
+
+- (void)dealloc
+{
+  NSLog(@"deallocating %@", self);
+}
 
 @end
