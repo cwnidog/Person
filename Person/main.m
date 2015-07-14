@@ -53,6 +53,9 @@ int main(int argc, const char *argv[])
     NSLog(@"Employees: %@", employees);
     NSLog(@"Giving up ownership of one employee");
     [employees removeObjectAtIndex:5];
+    NSLog(@"Removing asset laptop 7 from assets");
+    BNREmployee *targetEmployee = [employees objectAtIndex:2];
+    [targetEmployee removeAsset:@"Laptop 7"];
     NSLog(@"Giving up ownership of array");
     employees = nil;
     

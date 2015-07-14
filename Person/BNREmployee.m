@@ -35,6 +35,18 @@
 
 } // addAsset()
 
+- (void)removeAsset:(NSString *)targetLabel
+{
+  for (BNRAsset *a in _assets)
+  {
+    if ([a.label isEqualToString:targetLabel])
+    {
+      [_assets removeObject:a];
+    }
+  }
+} // removeAsset()
+
+
 - (unsigned int)valueOfAssets
 {
   // sum up the resal evalue of the assets
