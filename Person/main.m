@@ -31,6 +31,8 @@ int main(int argc, const char *argv[])
       [employees addObject:mikey];
     } // for 10 employees
     
+    NSMutableArray *allAssets = [[NSMutableArray alloc] init];
+    
     // create 10 assets
     for (int i = 0; i < 10; i++)
     {
@@ -40,7 +42,7 @@ int main(int argc, const char *argv[])
       // give it an interesting label
       NSString *currentLabel = [NSString stringWithFormat:@"Laptop %d", i];
       asset.label = currentLabel;
-      asset.resalevalue = 350 + i * 17;
+      asset.resaleValue = 350 + i * 17;
       
       // get a random number between 0 & 9, inclusive
       NSUInteger randomIndex = random() % [employees count];
@@ -48,18 +50,24 @@ int main(int argc, const char *argv[])
       // find that employee and assign the asset to him
       BNREmployee *randomEmployee = [employees objectAtIndex:randomIndex];
       [randomEmployee addAsset:asset];
+      [allAssets addObject:asset];
+      
     } // for 10 assets
     
     NSLog(@"Employees: %@", employees);
     NSLog(@"Giving up ownership of one employee");
     [employees removeObjectAtIndex:5];
+    NSLog(@"allAssets: %@", allAssets);
     NSLog(@"Removing asset laptop 7 from assets");
     BNREmployee *targetEmployee = [employees objectAtIndex:2];
     [targetEmployee removeAsset:@"Laptop 7"];
     NSLog(@"Giving up ownership of array");
+    
+    allAssets = nil;
     employees = nil;
     
   } // autoreleasepool
   
+  sleep(100); // give instrumentation some time to catch up
   return 0;
 } // main()

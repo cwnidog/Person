@@ -42,18 +42,26 @@
   }
   
   [_assets addObject:a];
+  a.holder = self;
 
 } // addAsset()
 
 - (void)removeAsset:(NSString *)targetLabel
 {
+  BNRAsset *targetAsset;
+  
   for (BNRAsset *a in _assets)
   {
     if ([a.label isEqualToString:targetLabel])
     {
-      [_assets removeObject:a];
+      targetAsset = a;
+    }
+    else
+    {
+      NSLog(@"Asset %@ not found.", targetLabel);
     }
   }
+  [_assets removeObject:targetAsset];
 } // removeAsset()
 
 
@@ -63,7 +71,7 @@
   unsigned int sum = 0;
   for (BNRAsset *a in _assets)
   {
-    sum += [a resalevalue];
+    sum += [a resaleValue];
   }
   return sum;
 } // valueOfAssets
