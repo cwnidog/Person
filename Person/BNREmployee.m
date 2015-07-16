@@ -21,17 +21,6 @@
 
 @implementation BNREmployee
 
-// accessors for asset properties
-- (void)setAssets:(NSArray *)a
-{
-  _assets = [a mutableCopy];
-} // setAssets()
-
-- (NSArray *)assets
-{
-  return [_assets copy];
-} // assets get accessor
-
 - (void)addAsset:(BNRAsset *)a
 {
   // Is the list of assets nil?
