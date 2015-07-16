@@ -66,13 +66,13 @@
 		5DCD4AF91B4C85EB005958C8 /* Person */ = {
 			isa = PBXGroup;
 			children = (
-				5DCD4AFA1B4C85EB005958C8 /* main.m */,
 				5D8C57111B4DE64000EF47CF /* BNREmployee.h */,
 				5D8C57121B4DE64000EF47CF /* BNREmployee.m */,
 				5DCD4B011B4C8650005958C8 /* BNRPerson.h */,
 				5DCD4B021B4C8650005958C8 /* BNRPerson.m */,
 				5D83C8591B506FC5000B81A8 /* BNRAsset.h */,
 				5D83C85A1B506FC5000B81A8 /* BNRAsset.m */,
+				5DCD4AFA1B4C85EB005958C8 /* main.m */,
 			);
 			path = Person;
 			sourceTree = "<group>";
