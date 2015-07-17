@@ -69,6 +69,10 @@ int main(int argc, const char *argv[])
       
     } // for 10 assets
     
+    NSSortDescriptor *voa = [NSSortDescriptor sortDescriptorWithKey:@"valueOfAssets" ascending:YES];
+    NSSortDescriptor *eid = [NSSortDescriptor sortDescriptorWithKey:@"employeeID" ascending:YES];
+    [employees sortUsingDescriptors:@[voa, eid]];
+    
     NSLog(@"Employees: %@", employees);
     NSLog(@"Giving up ownership of one employee");
     [employees removeObjectAtIndex:5];
@@ -80,6 +84,11 @@ int main(int argc, const char *argv[])
     // print out the CEO's information
     NSLog(@"CEO: %@", executives[@"CEO"]);
     executives = nil;
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"holder.valueOfAssets > 70"];
+    NSArray *toBeReclaimed = [allAssets filteredArrayUsingPredicate:predicate];
+    NSLog(@"To be reclaimed: %@", toBeReclaimed);
+    toBeReclaimed = nil;
     
     NSLog(@"Removing asset laptop 7 from assets");
     BNREmployee *targetEmployee = [employees objectAtIndex:2];
